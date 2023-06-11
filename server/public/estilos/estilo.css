@@ -1,0 +1,146 @@
+
+*{
+    font-family: "Lucida Sans Unicode", sans-serif;
+    font-size: small;
+    color: #fefefe;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+}
+
+.fondoBlanco{
+    position: relative;
+    width: 400px;
+    margin: 7% auto;
+    
+    background-image: url('https://cdn.pixabay.com/photo/2018/04/04/22/14/abstract-3291293_640.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;  
+    
+}
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.681);
+}
+.avatar{
+    width: 60px;
+    margin: 20px auto 0 auto;
+    
+}
+.avatar img{
+    width: 100%;
+    border: 3px solid #fff;
+    border-radius: 100%;
+}
+h2{
+    color: #fa0303;
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+label{margin-left: 46px;
+    font-size: small;
+    font-weight: 500;
+    margin-bottom: -6px;
+    color: #000000;
+}
+.input{
+    width: 300px;
+    margin: 0 auto 20px auto;
+    color: #000000;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+
+.cajaCheckbox{
+    margin-left: 50px;
+}
+
+.cajaCheckbox label{
+    margin-left: 0;
+}
+
+.botonRojo{
+    color: #fdfdfd;
+    background-color: #ff0000;
+    border: 2px solid rgb(230, 14, 14);
+    height: 30px;
+    font-weight: bold;
+    box-shadow: 3px 3px 4px 2px rgb(182, 181, 181);
+}
+.botonGris{
+    color: #fdfdfd;
+    background-color: #858282;
+    border: 2px solid rgb(125, 124, 124);
+    height: 30px;
+    font-weight: bold;
+    box-shadow: 3px 3px 4px 2px rgb(182, 181, 181);
+    margin-bottom: 70px;
+}
+.pLogin{
+    margin: auto auto 5px 50px;
+}
+
+
+.alerta{
+    position: relative;
+    top: -170px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 700px;
+    height: 50px;
+    margin: auto;
+
+    font-weight: bold;
+
+    transition-property: top;
+    transition: ease-in;
+    transition-duration: 600ms;
+
+}
+
+.alerta p{
+    padding: 0 40px;
+    font-size: small;
+    color: #610101;
+}
+.alertaEnviado{
+    border: 3px solid #129301;
+    color: #129301;
+}
+.alertaError{
+    border: 4px solid #ff0000;
+    color: #ff0000;
+}
+
+.errorCampo{
+    border: 3px solid #a40202;
+    background-color: rgb(253, 182, 182);
+    outline: none;
+}
+.input::placeholder{
+    color: #610101;
+}
+.errorInput{
+    border: #ff0000 solid 3px;
+}
+

@@ -1,0 +1,24 @@
+
+<%- include('header.ejs') %>
+
+<%- include('menunav.ejs') %>
+
+    
+<div class="fondoBlanco">
+    
+    <div class="contenedor">
+        <h2>LOGIN</h2>
+        <form action="" id="formLogin">
+            <div class="avatar">
+                <img src="/public/img/avatarRojo.png" alt="avatar">
+            </div>
+            <input type="text" name="nombreLogin" id="nombreLogin" class="input" placeholder="<%- formLogin.loginName %>"required>
+            <input type="password" name="passLogin" id="passLogin" class="input" placeholder="<%- formLogin.loginPass %>" required>
+            <button type="submit"  class="botonRojo input">Iniciar Sesion</button>
+        </form>
+        <button id="superSecretBtn" class="botonGris input">Sitio Super Secreto</button>
+    </div>
+</div>
+
+
+<%- include('footer.ejs') %>

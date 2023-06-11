@@ -1,0 +1,264 @@
+
+ul{
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+/* Vista teléfono */
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    "cabecera"
+    "logo"
+    "idiomas"
+    "menu";
+}
+
+.cabecera{
+    grid-area: cabecera;
+}
+
+.telefono{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #ffffff;
+    border: 3px solid #ff0000;
+}
+
+.cajaWhatsapp{
+    justify-self: right;
+}
+
+.linkTlf, .whatsapptlf{
+    font-size: x-small;
+    width: 125px;
+    padding-bottom: 5px;
+    color: #ff0000;
+    padding-top: 5px;
+    text-align: center;
+}
+.linkTlf img{
+    margin-right: 5px;
+}
+
+#logo{
+    grid-area: logo;
+    text-align: center;
+}
+
+#logo img{
+    width: 100%;
+}
+
+.idiomas{
+    grid-area: idiomas;
+    width: 90%;
+    margin: auto auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-toggle {
+    cursor: pointer;
+}
+
+.bar {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+.menu{
+    grid-area: menu;
+    display: none;
+}
+
+.menu a {
+    color: #ffffff;
+}
+.menu a:hover{
+    color: #ff0000;
+}
+.btnMenuOnClick{
+    color: greenyellow;
+
+}
+
+.btnMenu1{
+    color: orange;
+}
+
+
+
+/* Vista MINITablet*/
+@media screen and (min-width: 641px) and (max-width: 790px) {
+    /*Si la pantalla tiene enre 641 y 790 px*/ 
+
+    /* ******************** H E A D E R ************************* */
+  
+    header{
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        "cabecera cabecera"
+        "logo idiomas"
+        "menu menu";
+    }
+    .linkTlf, .whatsapptlf{
+        font-size: small;
+        width: 150px;
+    }
+
+    #logo{
+        text-align: left;
+    }
+
+  
+    .idiomas{
+        display: block;
+        margin: auto 20px 20px auto;
+        width: fit-content;
+    }
+
+    .banderasBuscador{
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .navbar-toggle{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+
+    .menu ul{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    } 
+    
+}    
+
+
+/* Vista Tablet*/
+@media screen and (min-width: 791px) and (max-width: 1007px) {
+
+    /*Si la pantalla tiene enre 641 y 1007 px*/ 
+
+    /* ******************** H E A D E R ************************* */
+  
+    header{
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        "cabecera cabecera"
+        "logo idiomas"
+        "menu menu";
+    }
+    .linkTlf, .whatsapptlf{
+        font-size: small;
+        width: 150px;
+    }
+
+    #logo{
+        text-align: left;
+    }
+
+    .idiomas{
+        display: block;
+        margin: auto 20px 20px auto;
+        width: fit-content;
+    }
+
+    .banderasBuscador{
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        align-items: center;
+    }
+
+
+    .navbar-toggle{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+
+    .menu ul{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+
+    }
+}    
+
+
+/***************** Vista PC 1008 ****************/
+@media screen and (min-width: 1008px) {
+    /*Si la pantalla tiene al menos 1008 px*/  
+
+    /* ******************** H E A D E R ************************* */
+
+    header{
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        "cabecera cabecera"
+        "logo idiomas"
+        "menu menu";
+    }
+    .linkTlf, .whatsapptlf{
+        font-size: small;
+        width: 150px;
+    }
+
+    #logo{
+        text-align: left;
+    }
+
+    .idiomas{
+        display: block;
+        margin: auto 20px 20px auto;
+        width: fit-content;
+    }
+
+    .banderasBuscador{
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .navbar-toggle{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    .menu ul{
+        
+        width: 60%;
+        margin-left: 40%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+
+    }
+    .menu a{
+        font-size: 14px;
+    }
+}    
