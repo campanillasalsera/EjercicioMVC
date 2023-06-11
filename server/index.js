@@ -2,6 +2,7 @@
 //npm install init
 //npm install express
 //npm install cors
+//npm install express-validator
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -12,6 +13,7 @@ const { loadUserDataIntoFormController } = require('./MVC/controllers/LoadUserDa
 const cookieParser = require('cookie-parser');
 const { loginController } = require('./MVC/controllers/LoginController');
 const {validarUserMiddleware} = require ('./MVC/middleware/validarUserMiddleware');
+const expressvalidator = require ('express-validator');
 
 
 
@@ -34,7 +36,7 @@ app.set("views", path.join(__dirname, 'MVC/views'));
 //en ese caso, no tengo claro como llamarlas, pues tengo app.use('/', crudroutes);
 //para que use crudroutes.
 app.get('/login/:id', loadUserDataIntoFormController);
-app.post('/userlogin', loginController);
+app.post('/userlogin', expressvalidator.body('nombre').trim(), expressvalidator.body('pass').trim(), loginController);
 app.get('/areaPrivada', validarUserMiddleware, (req, res) => {
   res.send({
     mensaje: "Estamos dentro"
