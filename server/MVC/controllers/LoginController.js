@@ -15,12 +15,15 @@ async function loginController(req, res) {
   if (usuarios.length === 1) {
 
     const nuevoUser = new Usuario (usuarios[0]["nombre"], usuarios[0]["apellidos"], usuarios[0]["email"], usuarios[0]["pass"], usuarios[0]["consentimiento"]);
-    res.cookie("isLogged", true, {
+    res.cookie("isLogged", nuevoUser.nombre, {
       maxAge: Date.now()+3600,  
     });
+
+
     
     console.log("Hola "+nuevoUser.nombre);
 
+    //ALEJANDRO
     //No consigo que el mensaje o los datos llegue desde aquí a la consola del cliente
     //He intentado de todo durante 2 días y no lo consigo.
     //No se cual es el motivo porque desde cuando uso el post del crudroute si envía mensaje al 
@@ -28,6 +31,7 @@ async function loginController(req, res) {
     //tampoco funcionó
     //También me gustaría hacer que aparezca un Hola nombreUsuario en la vista, 
     //pero tampoco lo he conseguido. Solo renderiza desde un get, no desde el post creo
+    //El usuario existe en la base de datos. 
     res.status(200).send({
       mensaje: "Mensaje desde el back"
     });

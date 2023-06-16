@@ -1,15 +1,15 @@
-
+const { loadUserDataIntoFormController } = require('../MVC/controllers/LoadUserDataIntoFormController');
 const mysql = require('mysql2/promise');
 const express = require('express');
 const DatabaseCreator = require('../MVC/models/DatabaseCreator');
+const expressvalidator = require ('express-validator');
+const { loginController } = require('../MVC/controllers/LoginController');
+const {validarUserMiddleware} = require ('../MVC/middleware/validarUserMiddleware');
 
-
-//no estoy segura que solo se incluyen aquí estas 4 rutas, o si hay otras rutas que
-//también debería ir aquí
 
 const router = express.Router();
 
-
+//Buscar usuario por id en la DB
 router.get('/crud/:id', async (req, res) => {
     
     const conexion = await DatabaseCreator.abrirConexion();
@@ -23,6 +23,7 @@ router.get('/crud/:id', async (req, res) => {
     await conexion.end;
 });
 
+//Insertar usuario en la DB
 router.post('/crud', async (req, res) => {
 
 
@@ -63,6 +64,7 @@ router.post('/crud', async (req, res) => {
 
 });
 
+//Actualizar usuario en al DB
 router.put('/crud/:id', async (req, res) => {
 
     const conexion = await DatabaseCreator.abrirConexion();
@@ -116,6 +118,7 @@ router.put('/crud/:id', async (req, res) => {
 
 });
 
+//Borrar usuario en la DB
 router.delete('/crud/:id', async (req, res) => {
 
     const conexion = await DatabaseCreator.abrirConexion();
@@ -149,5 +152,17 @@ router.delete('/crud/:id', async (req, res) => {
     
 });
 
+//logeo de usuario por id y aparecen sus datos en el placeholder
+router.get('/login/:id', loadUserDataIntoFormController);
+
+//ruta para el logeo de usuario con express validator
+router.post('/userlogin', expressvalidator.body('nombre').trim(), expressvalidator.body('pass').trim(), loginController);
+
+
+router.get('/areaPrivada', validarUserMiddleware, (req, res) => {
+  res.send({
+    mensaje: "Estamos dentro"
+  });
+})
 
 module.exports = router;

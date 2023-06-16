@@ -1,6 +1,7 @@
 
 window.onload = ()=>{
 
+
     //************** MENÚ HAMBURGUESA**************/
     let menu = document.querySelector(".menu");
     let navbarToggle = document.querySelector(".navbar-toggle");
