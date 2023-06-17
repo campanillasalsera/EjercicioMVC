@@ -45,7 +45,7 @@ async function loginController(req, res) {
   }
   
   
-  await conexion.end;
+  await conexion.end();
 
 }
 
